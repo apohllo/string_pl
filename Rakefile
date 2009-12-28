@@ -5,7 +5,7 @@ task :default => [:install]
 $gem_name = "locale_pl"
 
 desc "Build the gem"
-task :build => :test do
+task :build do
   sh "gem build #$gem_name.gemspec"
 end
 

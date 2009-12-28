@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ['Aleksander Pohl']
   s.files = ["Rakefile", "locale_pl.gemspec", 'lib/locale_pl.rb'] + 
     Dir.glob("lib/**/*")
-  s.test_files = Dir.glob("{test,spect}/**/*")
+  #s.test_files = Dir.glob("{test,spect}/**/*")
   #s.rdoc_options = ["--main", "README.txt"]
   #s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
 end
