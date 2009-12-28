@@ -2,7 +2,7 @@ require 'colors'
 
 task :default => [:install]
 
-$gem_name = "locale_pl"
+$gem_name = "string_pl"
 
 desc "Build the gem"
 task :build do
