@@ -1,6 +1,4 @@
-require 'colors'
-
-task :default => [:install]
+task :default => [:test]
 
 $gem_name = "string_pl"
 
@@ -10,7 +8,7 @@ task :build do
 end
 
 desc "Install the library at local machnie"
-task :install => :build do 
+task :install => :build do
   sh "sudo gem install #$gem_name"
 end
 
@@ -19,14 +17,12 @@ task :uninstall do
   sh "sudo gem uninstall #$gem_name"
 end
 
-desc "Run tests and spec"
+desc "Run tests"
 task :test do
   sh "ruby test/*"
-  puts "\n---- Specs ----".hl(:green)
-  sh "spec --color spec/*"
 end
 
 desc "Clean"
 task :clean do
-  sh "rm #$gem_name*.gem" 
+  sh "rm #$gem_name*.gem"
 end
