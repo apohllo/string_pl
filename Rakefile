@@ -1,6 +1,6 @@
 task :default => [:test]
 
-$gem_name = "string_pl"
+$gem_name = "string_case_pl"
 
 desc "Build the gem"
 task :build do
