@@ -37,6 +37,17 @@ class String
     end
     self.old_upcase_wo_pl
   end
+    
+  def capitalize
+    self[0] = case self.encoding.name
+      when "UTF-8"
+      self[0].tr(PL_UTF_8_LOWER, PL_UTF_8_UPPER)
+      when "ISO-8859-2"
+      self[0].tr(PL_ISO_8859_2_LOWER, PL_ISO_8859_2_UPPER)
+      when "Windows-1250"
+      self[0].tr(PL_WINDOWS_1250_LOWER, PL_WINDOWS_1250_UPPER)
+    end
+    self
+  end
 
 end
-

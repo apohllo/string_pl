@@ -10,6 +10,9 @@ class TestCharacterCaseChange < Test::Unit::TestCase
     @iso_upper = "\xa1\xc6\xca\xa3\xd1\xd3\xa6\xaf\xacABCDEFGHIJKLMNOPQRSTUVWXYZ".force_encoding("ISO-8859-2")
     @windows_lower = "\xb9\xe6\xea\xb3\xf1\xf3\x9c\xbf\x9fabcdefghijklmnopqrstuvwxyz".force_encoding("Windows-1250")
     @windows_upper = "\xa5\xc6\xca\xa3\xd1\xd3\x8c\xaf\x8fABCDEFGHIJKLMNOPQRSTUVWXYZ".force_encoding("Windows-1250")
+    @utf_capitalized = "Ąćęłńóśżźabcdefghijklmnopqrstuvwxyz".force_encoding("UTF-8")
+    @iso_capitalized = "\xa1\xe6\xea\xb3\xf1\xf3\xb6\xbf\xbcabcdefghijklmnopqrstuvwxyz".force_encoding("ISO-8859-2")
+    @windows_capitalized = "\xa5\xe6\xea\xb3\xf1\xf3\x9c\xbf\x9fabcdefghijklmnopqrstuvwxyz".force_encoding("Windows-1250")
   end
 
   def test_utf_8_downcase
@@ -35,5 +38,17 @@ class TestCharacterCaseChange < Test::Unit::TestCase
   def test_windows_1250_upcase
     assert_equal(@windows_upper, @windows_lower.upcase)
   end
+  
+  def test_utf_8_capitalize
+    assert_equal(@utf_capitalized, @utf_lower.capitalize)
+  end
+  
+  def test_windows_1250_capitalize
+    assert_equal(@windows_capitalized, @windows_lower.capitalize)
+  end
+  
+  def test_iso_8859_2_capitalize
+    assert_equal(@iso_capitalized, @iso_lower.capitalize)
+  end
+  
 end
-
