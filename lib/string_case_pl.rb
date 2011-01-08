@@ -13,6 +13,7 @@ class String
 
   alias old_downcase_wo_pl downcase
   alias old_upcase_wo_pl upcase
+  alias old_capitalize_wo_pl capitalize
 
   def downcase
     case self.encoding.name
@@ -39,15 +40,17 @@ class String
   end
     
   def capitalize
-    self[0] = case self.encoding.name
-      when "UTF-8"
-      self[0].tr(PL_UTF_8_LOWER, PL_UTF_8_UPPER)
-      when "ISO-8859-2"
-      self[0].tr(PL_ISO_8859_2_LOWER, PL_ISO_8859_2_UPPER)
-      when "Windows-1250"
-      self[0].tr(PL_WINDOWS_1250_LOWER, PL_WINDOWS_1250_UPPER)
-    end
-    self
+    s = self.dup
+    s[0] = s[0].upcase
+    s[1..-1] = s[1..-1].downcase
+    s
+  end
+  
+  def capitalize!
+    old = self.dup
+    self[0] = self[0].upcase
+    self[1..-1] = self[1..-1].downcase
+    self unless old == self
   end
 
 end
