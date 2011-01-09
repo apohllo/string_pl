@@ -51,4 +51,10 @@ class TestCharacterCaseChange < Test::Unit::TestCase
     assert_equal(@iso_capitalized, @iso_lower.capitalize)
   end
   
+  def test_capitalize!
+    d = @utf_lower.dup
+    assert_equal(d.capitalize!, @utf_capitalized)
+    assert_equal(d.capitalize!, nil)
+  end
+  
 end

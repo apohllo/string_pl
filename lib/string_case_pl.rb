@@ -48,8 +48,7 @@ class String
   
   def capitalize!
     old = self.dup
-    self[0] = self[0].upcase
-    self[1..-1] = self[1..-1].downcase
+    self[0..-1] = self.capitalize
     self unless old == self
   end
 

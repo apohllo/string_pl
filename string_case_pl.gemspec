@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "string_case_pl"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
   s.date = "2009-12-27"
   s.summary = "Additional support for Polish encodings in Ruby 1.9"
   s.email = "apohllo@o2.pl"
