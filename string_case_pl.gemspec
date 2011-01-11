@@ -1,14 +1,14 @@
 Gem::Specification.new do |s|
   s.name = "string_case_pl"
   s.version = "0.0.5"
-  s.date = "2009-12-27"
+  s.date = "2011-01-11"
   s.summary = "Additional support for Polish encodings in Ruby 1.9"
   s.email = "apohllo@o2.pl"
-  s.homepage = "http://apohllo.pl/blog"
+  s.homepage = "https://github.com/apohllo/string_pl"
   s.description = "Polish extensions for Ruby 1.9 String #upcase, #downcase and #capitalize supporting polish diacritics"
   s.require_path = "lib"
   s.has_rdoc = false
-  s.authors = ['Aleksander Pohl']
+  s.authors = ['Aleksander Pohl',"hosiawak","sebcioz"]
   s.files = ["Rakefile", "string_case_pl.gemspec", 'lib/string_case_pl.rb'] +
     Dir.glob("lib/**/*")
   s.test_files = Dir.glob("{test}/**/*")
