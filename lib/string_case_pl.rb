@@ -38,14 +38,14 @@ class String
     end
     self.old_upcase_wo_pl
   end
-    
+
   def capitalize
     s = self.dup
     s[0] = s[0].upcase
     s[1..-1] = s[1..-1].downcase
     s
   end
-  
+
   def capitalize!
     old = self.dup
     self[0..-1] = self.capitalize
