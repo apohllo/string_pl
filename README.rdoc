@@ -1,0 +1,57 @@
+== String Case/Comparison of Polish strings
+
+Due to the fact, that case conversion and string comparison
+is encoding and locale dependent, in Ruby 1.9 the default
+implementation of String#upcase, String#downcase and String#<=> 
+doesn't work properly for languages other than English.
+
+This library brings the implementation of #upcase, #downcase, #capitalize
+and #<=> which accords with the Polish grammar rules.
+
+== INSTALL
+
+  gem install string_case_pl
+
+== USAGE
+
+If you want only #upcase #downcase and #capitalize to work properly 
+require the following file:
+
+  require 'string_case_pl'
+
+If you also want #<=> to work properly, require the following file:
+
+  require 'string_cmp_pl'
+
+It implicitly requires the 'string_case_pl'. This is split into two
+file, since reimplementation of <=> for string might cause a serious 
+performance hit.
+
+== LICENSE
+
+(The MIT/X11 License)
+
+Copyright (c) 2008-2011 Aleksander Pohl
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+== FEEDBACK
+
+* mailto:apohllo@o2.pl
