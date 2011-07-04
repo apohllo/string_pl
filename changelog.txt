@@ -1,0 +1,17 @@
+0.1.0
+- readme
+- comparison of Polish strings
+- constantize encoding names
+- removal of empty spaces
+- update date and authors
+0.0.5
+- added #capitalize!
+0.0.4
+- added #capitalize
+0.0.2
+- changed the name of the gem
+- removed backup files
+- added tests and windows-1250 support
+- locale_pl changed into string_pl
+- Tests removed form Rakefile and gemspec
+- Initial commit of locale_pl

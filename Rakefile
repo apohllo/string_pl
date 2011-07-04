@@ -19,7 +19,8 @@ end
 
 desc "Run tests"
 task :test do
-  sh "ruby test/*"
+  sh "ruby test/test_character_case_change.rb"
+  sh "ruby test/test_comparison.rb"
 end
 
 desc "Clean"
