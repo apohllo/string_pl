@@ -14,11 +14,11 @@ class String
   PL_WINDOWS_1250_LOWER = PL_UTF_8_LOWER.encode(WINDOWS_CP1250_ENCODING)
   PL_WINDOWS_1250_UPPER = PL_UTF_8_UPPER.encode(WINDOWS_CP1250_ENCODING)
 
-  alias old_downcase_wo_pl downcase
-  alias old_upcase_wo_pl upcase
+  alias old_downcase_wo_pl downcase!
+  alias old_upcase_wo_pl upcase!
   alias old_capitalize_wo_pl capitalize
 
-  def downcase
+  def downcase!
     case self.encoding.name
     when UTF_8_ENCODING
       self.tr!(PL_UTF_8_UPPER,PL_UTF_8_LOWER)
@@ -30,7 +30,13 @@ class String
     self.old_downcase_wo_pl
   end
 
-  def upcase
+  def downcase
+    str = self.dup
+    str.downcase!
+    str
+  end
+
+  def upcase!
     case self.encoding.name
     when UTF_8_ENCODING
       self.tr!(PL_UTF_8_LOWER, PL_UTF_8_UPPER)
@@ -41,14 +47,20 @@ class String
     end
     self.old_upcase_wo_pl
   end
-    
+
+  def upcase
+    str = self.dup
+    str.upcase!
+    str
+  end
+
   def capitalize
     s = self.dup
     s[0] = s[0].upcase
     s[1..-1] = s[1..-1].downcase
     s
   end
-  
+
   def capitalize!
     old = self.dup
     self[0..-1] = self.capitalize
@@ -56,3 +68,4 @@ class String
   end
 
 end
+
