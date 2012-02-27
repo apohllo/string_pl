@@ -56,8 +56,8 @@ class String
 
   def capitalize
     s = self.dup
-    s[0] = s[0].upcase
-    s[1..-1] = s[1..-1].downcase
+    s[0..0] = s[0..0].upcase
+    s[1..-1] = s[1..-1].downcase if s[1]
     s
   end
 

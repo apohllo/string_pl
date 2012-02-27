@@ -146,4 +146,22 @@ class TestCharacterCaseChange < Test::Unit::TestCase
     assert_equal(copy.capitalize!, nil)
   end
 
+  def test_empty_string_capitalize
+    empty_string = ""
+    empty_string_copy = empty_string.dup
+    assert_equal(empty_string_copy,empty_string.capitalize)
+  end
+
+  def test_empty_string_capitalize!
+    empty_string = ""
+    empty_string.capitalize!
+    assert_equal(empty_string,"")
+  end
+
+  def test_one_letter_capitalize
+    one_letter = "ą"
+    assert_equal(one_letter.capitalize,"Ą")
+    one_letter = "Ą"
+    assert_equal(one_letter.capitalize,"Ą")
+  end
 end
