@@ -1,3 +1,9 @@
+0.1.2
+- fix capitalization of an empty string
+0.1.1
+- fix upcase and downcase modifying string in place
+- upcase!, downcase! added
+- encoding names are constants
 0.1.0
 - readme
 - comparison of Polish strings
